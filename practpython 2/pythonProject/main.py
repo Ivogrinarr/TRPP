@@ -1,5 +1,7 @@
-import datetime, ipaddress
-#from pyodbc import Cursor
+import datetime, ipaddress, pyodbc,pymssql
+
+import columnar
+from pyodbc import Cursor
 
 
 
@@ -110,7 +112,7 @@ routemask = []
 gate = []
 x = 0
 y = 0
-with open(r'../input1.xml') as f:
+with open(r'C:\Users\admin\Desktop\11111-KSH_s_TSUSom.xml') as f:
     line = str(f.readline())
     while line != '':
         for flag in flagi:
@@ -153,7 +155,7 @@ with open(r'../input1.xml') as f:
 
 accociateiproute(routeip, routemask, gate, net_ip, netmask, intip, intmask, intname)
 
-f2 = open(r'../Outputest.urt', 'w')
+f2 = open(r'C:\Users\admin\Desktop\Outputest.urt', 'w')
 f2.write('# ==========================================================' + '\n')
 f2.write('# AlgoSec Firewall Analyzer:' + '\n')
 f2.write('# Routing Table for ' + forwhat + '\n')
